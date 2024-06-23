@@ -6,7 +6,7 @@ setInterval(async () => {
 		for (let i = 0; i < data.JWT.length; i++) {
 
 			if (data.actions.isBuy) {
-				hamster.buy({
+				await hamster.buy({
 					...data.account,
 					'Authorization': data.JWT[i]
 				})
@@ -17,11 +17,11 @@ setInterval(async () => {
 
 	}
 }, 5000)
-setInterval(() => {
+setInterval(async() => {
 	try {
 		for (let i = 0; i < data.JWT.length; i++) {
 			if (data.actions.isTap) {
-				hamster.tap({
+				await hamster.tap({
 					...data.account,
 					'Authorization': data.JWT[i]
 				})
